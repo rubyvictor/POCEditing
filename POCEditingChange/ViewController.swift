@@ -54,39 +54,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if let text: NSString = (textField.text ?? "") as? NSString {
-            let changedText = text.replacingCharacters(in: range, with: string)
+            print("removing credit card number")
+//        if let text: NSString = (textField.text ?? "") as? NSString {
+//            let changedText = text.replacingCharacters(in: range, with: string)
 //            deleteBackwards(on: changedText)
-            checkMaxLength(textField, maxLength: 16, string: string)
+            checkMaxLength(textField, maxLength: 19, string: string)
             return true
-        }
+//        }
     }
-        
-    func deleteBackwards(on string: String) {
-        if string.isBackspace {
-            textField.deleteBackward()
-        }
-    }
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        deleteBackwards(on: "")
-        return true
-    }
-    
-    
-//        guard let text = textField.text else { return true }
-//        let count = text.count + string.count - range.length
-//
-//        return count <= 19
-//    }
     
     private func checkMaxLength(_ textField: UITextField, maxLength: Int, string: String) {
         guard let count = textField.text?.count else { return }
         // Need to check for empty space otherwise cannot delete backwards from the space
-        if count == 19 || string.isBackspace {
-            
-            let finalText = string.replacingOccurrences(of: " ", with: "")
-            textField.text = finalText
+        if count >= maxLength || string.isBackspace {
+            if let text: String = String(textField.text ?? "") {
+                let finalText = text.trimmingCharacters(in: NSCharacterSet.whitespaces)
+                textField.text = finalText
+            }
+//            let finalText = string.replacingOccurrences(of: " ", with: "")
+//            textField.text = finalText
             textField.deleteBackward()
         }
     
