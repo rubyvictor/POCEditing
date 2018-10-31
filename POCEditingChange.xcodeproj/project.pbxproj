@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B1F1D8EB2186CF450030F2A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1D8EA2186CF450030F2A4 /* AppDelegate.swift */; };
-		B1F1D8ED2186CF450030F2A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1D8EC2186CF450030F2A4 /* ViewController.swift */; };
+		B1F1D8ED2186CF450030F2A4 /* CreditCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1D8EC2186CF450030F2A4 /* CreditCardController.swift */; };
 		B1F1D8F02186CF450030F2A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F1D8EE2186CF450030F2A4 /* Main.storyboard */; };
 		B1F1D8F22186CF460030F2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1F1D8F12186CF460030F2A4 /* Assets.xcassets */; };
 		B1F1D8F52186CF460030F2A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F1D8F32186CF460030F2A4 /* LaunchScreen.storyboard */; };
-		B1F1D9002186CF460030F2A4 /* POCEditingChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1D8FF2186CF460030F2A4 /* POCEditingChangeTests.swift */; };
+		B1FF6734218985AE00E4D791 /* TestCreditCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF6733218985AE00E4D791 /* TestCreditCardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B1F1D8FC2186CF460030F2A4 /* PBXContainerItemProxy */ = {
+		B1FF6736218985AE00E4D791 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B1F1D8DF2186CF450030F2A4 /* Project object */;
 			proxyType = 1;
@@ -28,14 +28,14 @@
 /* Begin PBXFileReference section */
 		B1F1D8E72186CF450030F2A4 /* POCEditingChange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCEditingChange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F1D8EA2186CF450030F2A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1F1D8EC2186CF450030F2A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1F1D8EC2186CF450030F2A4 /* CreditCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardController.swift; sourceTree = "<group>"; };
 		B1F1D8EF2186CF450030F2A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1F1D8F12186CF460030F2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1F1D8F42186CF460030F2A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1F1D8F62186CF460030F2A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1F1D8FB2186CF460030F2A4 /* POCEditingChangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCEditingChangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1F1D8FF2186CF460030F2A4 /* POCEditingChangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCEditingChangeTests.swift; sourceTree = "<group>"; };
-		B1F1D9012186CF460030F2A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1FF6731218985AE00E4D791 /* TestCreditCardController.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCreditCardController.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FF6733218985AE00E4D791 /* TestCreditCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCreditCardController.swift; sourceTree = "<group>"; };
+		B1FF6735218985AE00E4D791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1F1D8F82186CF460030F2A4 /* Frameworks */ = {
+		B1FF672E218985AE00E4D791 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F1D8E92186CF450030F2A4 /* POCEditingChange */,
-				B1F1D8FE2186CF460030F2A4 /* POCEditingChangeTests */,
+				B1FF6732218985AE00E4D791 /* TestCreditCardController */,
 				B1F1D8E82186CF450030F2A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F1D8E72186CF450030F2A4 /* POCEditingChange.app */,
-				B1F1D8FB2186CF460030F2A4 /* POCEditingChangeTests.xctest */,
+				B1FF6731218985AE00E4D791 /* TestCreditCardController.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F1D8EA2186CF450030F2A4 /* AppDelegate.swift */,
-				B1F1D8EC2186CF450030F2A4 /* ViewController.swift */,
+				B1F1D8EC2186CF450030F2A4 /* CreditCardController.swift */,
 				B1F1D8EE2186CF450030F2A4 /* Main.storyboard */,
 				B1F1D8F12186CF460030F2A4 /* Assets.xcassets */,
 				B1F1D8F32186CF460030F2A4 /* LaunchScreen.storyboard */,
@@ -87,13 +87,13 @@
 			path = POCEditingChange;
 			sourceTree = "<group>";
 		};
-		B1F1D8FE2186CF460030F2A4 /* POCEditingChangeTests */ = {
+		B1FF6732218985AE00E4D791 /* TestCreditCardController */ = {
 			isa = PBXGroup;
 			children = (
-				B1F1D8FF2186CF460030F2A4 /* POCEditingChangeTests.swift */,
-				B1F1D9012186CF460030F2A4 /* Info.plist */,
+				B1FF6733218985AE00E4D791 /* TestCreditCardController.swift */,
+				B1FF6735218985AE00E4D791 /* Info.plist */,
 			);
-			path = POCEditingChangeTests;
+			path = TestCreditCardController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,22 +116,22 @@
 			productReference = B1F1D8E72186CF450030F2A4 /* POCEditingChange.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B1F1D8FA2186CF460030F2A4 /* POCEditingChangeTests */ = {
+		B1FF6730218985AE00E4D791 /* TestCreditCardController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1F1D9072186CF460030F2A4 /* Build configuration list for PBXNativeTarget "POCEditingChangeTests" */;
+			buildConfigurationList = B1FF6738218985AE00E4D791 /* Build configuration list for PBXNativeTarget "TestCreditCardController" */;
 			buildPhases = (
-				B1F1D8F72186CF460030F2A4 /* Sources */,
-				B1F1D8F82186CF460030F2A4 /* Frameworks */,
-				B1F1D8F92186CF460030F2A4 /* Resources */,
+				B1FF672D218985AE00E4D791 /* Sources */,
+				B1FF672E218985AE00E4D791 /* Frameworks */,
+				B1FF672F218985AE00E4D791 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B1F1D8FD2186CF460030F2A4 /* PBXTargetDependency */,
+				B1FF6737218985AE00E4D791 /* PBXTargetDependency */,
 			);
-			name = POCEditingChangeTests;
-			productName = POCEditingChangeTests;
-			productReference = B1F1D8FB2186CF460030F2A4 /* POCEditingChangeTests.xctest */;
+			name = TestCreditCardController;
+			productName = TestCreditCardController;
+			productReference = B1FF6731218985AE00E4D791 /* TestCreditCardController.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -140,15 +140,15 @@
 		B1F1D8DF2186CF450030F2A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = VictorLee;
 				TargetAttributes = {
 					B1F1D8E62186CF450030F2A4 = {
 						CreatedOnToolsVersion = 10.0;
 					};
-					B1F1D8FA2186CF460030F2A4 = {
-						CreatedOnToolsVersion = 10.0;
+					B1FF6730218985AE00E4D791 = {
+						CreatedOnToolsVersion = 10.1;
 						TestTargetID = B1F1D8E62186CF450030F2A4;
 					};
 				};
@@ -167,7 +167,7 @@
 			projectRoot = "";
 			targets = (
 				B1F1D8E62186CF450030F2A4 /* POCEditingChange */,
-				B1F1D8FA2186CF460030F2A4 /* POCEditingChangeTests */,
+				B1FF6730218985AE00E4D791 /* TestCreditCardController */,
 			);
 		};
 /* End PBXProject section */
@@ -183,7 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1F1D8F92186CF460030F2A4 /* Resources */ = {
+		B1FF672F218985AE00E4D791 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -197,26 +197,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1F1D8ED2186CF450030F2A4 /* ViewController.swift in Sources */,
+				B1F1D8ED2186CF450030F2A4 /* CreditCardController.swift in Sources */,
 				B1F1D8EB2186CF450030F2A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1F1D8F72186CF460030F2A4 /* Sources */ = {
+		B1FF672D218985AE00E4D791 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1F1D9002186CF460030F2A4 /* POCEditingChangeTests.swift in Sources */,
+				B1FF6734218985AE00E4D791 /* TestCreditCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B1F1D8FD2186CF460030F2A4 /* PBXTargetDependency */ = {
+		B1FF6737218985AE00E4D791 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B1F1D8E62186CF450030F2A4 /* POCEditingChange */;
-			targetProxy = B1F1D8FC2186CF460030F2A4 /* PBXContainerItemProxy */;
+			targetProxy = B1FF6736218985AE00E4D791 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -392,20 +392,20 @@
 			};
 			name = Release;
 		};
-		B1F1D9082186CF460030F2A4 /* Debug */ = {
+		B1FF6739218985AE00E4D791 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E26925RH2T;
-				INFOPLIST_FILE = POCEditingChangeTests/Info.plist;
+				INFOPLIST_FILE = TestCreditCardController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.VictorLee.POCEditingChangeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VictorLee.TestCreditCardController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,20 +413,20 @@
 			};
 			name = Debug;
 		};
-		B1F1D9092186CF460030F2A4 /* Release */ = {
+		B1FF673A218985AE00E4D791 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E26925RH2T;
-				INFOPLIST_FILE = POCEditingChangeTests/Info.plist;
+				INFOPLIST_FILE = TestCreditCardController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.VictorLee.POCEditingChangeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VictorLee.TestCreditCardController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,11 +455,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1F1D9072186CF460030F2A4 /* Build configuration list for PBXNativeTarget "POCEditingChangeTests" */ = {
+		B1FF6738218985AE00E4D791 /* Build configuration list for PBXNativeTarget "TestCreditCardController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1F1D9082186CF460030F2A4 /* Debug */,
-				B1F1D9092186CF460030F2A4 /* Release */,
+				B1FF6739218985AE00E4D791 /* Debug */,
+				B1FF673A218985AE00E4D791 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

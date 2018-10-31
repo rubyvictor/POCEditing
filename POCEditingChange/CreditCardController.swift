@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class CreditCardController: UIViewController, UITextFieldDelegate {
 
+    
     let textField: UITextField = {
        let tf = UITextField()
         tf.textAlignment = .center
@@ -54,35 +55,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            print("removing credit card number")
-//        if let text: NSString = (textField.text ?? "") as? NSString {
-//            let changedText = text.replacingCharacters(in: range, with: string)
-//            deleteBackwards(on: changedText)
-            checkMaxLength(textField, maxLength: 19, string: string)
-            return true
-//        }
+        if string == " " {
+            return false
+        }
+        print("Changing characters")
+        checkMaxLength(textField, maxLength: 19, string: string)
+        return true
     }
     
-    private func checkMaxLength(_ textField: UITextField, maxLength: Int, string: String) {
+    public func checkMaxLength(_ textField: UITextField, maxLength: Int, string: String) {
         guard let count = textField.text?.count else { return }
-        // Need to check for empty space otherwise cannot delete backwards from the space
+        
         if count >= maxLength || string.isBackspace {
-            if let text: String = String(textField.text ?? "") {
-                let finalText = text.trimmingCharacters(in: NSCharacterSet.whitespaces)
+            if let text = textField.text {
+                let finalText = text.replacingOccurrences(of: " ", with: "")
                 textField.text = finalText
             }
-//            let finalText = string.replacingOccurrences(of: " ", with: "")
-//            textField.text = finalText
             textField.deleteBackward()
         }
     
-//        if string.isBackspace {
-//            if string.count >= maxLength {
-//                let newString = string.trimmingCharacters(in: NSCharacterSet.whitespaces)
-//                textField.text = newString
-//                textField.deleteBackward()
-//            }
-//        }
+
     }
 
 }
