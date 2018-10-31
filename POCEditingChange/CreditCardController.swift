@@ -10,7 +10,9 @@ import UIKit
 
 class CreditCardController: UIViewController, UITextFieldDelegate {
 
-    let maxNumCharacters = 19
+    private var previousTextFieldContent: String?
+    private var previousSelection: UITextRange?
+    
     
     let textField: UITextField = {
        let tf = UITextField()
@@ -19,7 +21,7 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.backgroundColor = .gray
         tf.borderStyle = .line
-        tf.addTarget(self, action: #selector(textFieldChanged(textField:)), for: .editingChanged)
+        tf.addTarget(self, action: #selector(reformatAsCardNumber(textField:)), for: .editingChanged)
         return tf
     }()
     
@@ -35,17 +37,6 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
         
         
     }
-
-    @objc private func textFieldChanged (textField: UITextField) {
-        print("changing credit card number")
-        guard let count = textField.text?.count else { return }
-        if count == 4 || count == 9 || count == 14 {
-            guard var text = textField.text else { return }
-            text = text + " "
-            textField.text = text
-        }
-        print(count)
-    }
     
     private func setupTextField(){
         textField.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 10).isActive = true
@@ -56,30 +47,76 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let newLength = textField.text!.count + string.count - range.length
-        checkMaxLength(textField, maxLength: newLength, string: string)
-        return newLength <= maxNumCharacters
+        previousTextFieldContent = textField.text;
+        previousSelection = textField.selectedTextRange;
+        return true
     }
     
-    public func checkMaxLength(_ textField: UITextField, maxLength: Int, string: String) {
-        guard let count = textField.text?.count else { return }
+    @objc func reformatAsCardNumber(textField: UITextField) {
+        var targetCursorPosition = 0
+        if let startPosition = textField.selectedTextRange?.start {
+            targetCursorPosition = textField.offset(from: textField.beginningOfDocument, to: startPosition)
+        }
         
-        if count >= maxLength || string.isBackspace {
-            if let text = textField.text {
-                let finalText = text.replacingOccurrences(of: " ", with: "")
-                textField.text = finalText
-            }
-            textField.deleteBackward()
+        var cardNumberWithoutSpaces = ""
+        if let text = textField.text {
+            cardNumberWithoutSpaces = self.removeNonDigits(string: text, andPreserveCursorPosition: &targetCursorPosition)
+        }
+        
+        if cardNumberWithoutSpaces.count > 16 {
+            textField.text = previousTextFieldContent
+            textField.selectedTextRange = previousSelection
+            return
+        }
+        
+        let cardNumberWithSpaces = self.insertCreditCardSpaces(cardNumberWithoutSpaces, preserveCursorPosition: &targetCursorPosition)
+        textField.text = cardNumberWithSpaces
+        
+        if let targetPosition = textField.position(from: textField.beginningOfDocument, offset: targetCursorPosition) {
+            textField.selectedTextRange = textField.textRange(from: targetPosition, to: targetPosition)
         }
     }
-}
+    
+    func removeNonDigits(string: String, andPreserveCursorPosition cursorPosition: inout Int) -> String {
+        var digitsOnlyString = ""
+        let originalCursorPosition = cursorPosition
+        
+        for i in Swift.stride(from: 0, to: string.count, by: 1) {
+            let characterToAdd = string[string.index(string.startIndex, offsetBy: i)]
+            if characterToAdd >= "0" && characterToAdd <= "8" {
+                digitsOnlyString.append(characterToAdd)
+            }
+            else if i < originalCursorPosition {
+                cursorPosition -= 1
+            }
+        }
+        
+        return digitsOnlyString
+    }
+    
+    func insertCreditCardSpaces(_ string: String, preserveCursorPosition cursorPosition: inout Int) -> String {
 
-extension String {
-    var isBackspace: Bool {
-        let char = self.cString(using: String.Encoding.utf8)!
-        return strcmp(char, "\\b") == -92
+        let is4444 = true
+        
+        var stringWithAddedSpaces = ""
+        let cursorPositionInSpacelessString = cursorPosition
+        
+        for i in 0..<string.count {
+            let needs4444Spacing = (is4444 && i > 0 && (i % 4) == 0)
+            
+            if needs4444Spacing {
+                stringWithAddedSpaces.append(" ")
+                
+                if i < cursorPositionInSpacelessString {
+                    cursorPosition += 1
+                }
+            }
+            
+            let characterToAdd = string[string.index(string.startIndex, offsetBy:i)]
+            stringWithAddedSpaces.append(characterToAdd)
+        }
+        
+        return stringWithAddedSpaces
     }
 }
-
 
