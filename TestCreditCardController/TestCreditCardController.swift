@@ -10,7 +10,6 @@
 import XCTest
 
 class TestCreditCardController: XCTestCase {
-    var creditCardVC: CreditCardController!
     
     override func setUp() {
         super.setUp()
@@ -24,11 +23,6 @@ class TestCreditCardController: XCTestCase {
     }
 
     func testExample() {
-        creditCardVC = CreditCardController()
-        
-        let testedString = String(repeating: "", count: creditCardVC.maxNumCharacters)
-        let testedResult = creditCardVC.textField(creditCardVC.textField, shouldChangeCharactersIn: NSRange(location: 0, length: 1), replacementString: testedString)
-        XCTAssertTrue(testedResult, "The max characters allowed is \(creditCardVC.maxNumCharacters) characters")
     }
 
     func testPerformanceExample() {
