@@ -24,9 +24,11 @@ class TestCreditCardController: XCTestCase {
     }
 
     func testExample() {
-    
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        creditCardVC = CreditCardController()
+        
+        let testedString = String(repeating: "", count: creditCardVC.maxNumCharacters)
+        let testedResult = creditCardVC.textField(creditCardVC.textField, shouldChangeCharactersIn: NSRange(location: 0, length: 0), replacementString: testedString)
+        XCTAssertTrue(testedResult, "The max characters allowed is \(creditCardVC.maxNumCharacters) characters")
     }
 
     func testPerformanceExample() {

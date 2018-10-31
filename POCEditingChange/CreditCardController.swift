@@ -10,6 +10,7 @@ import UIKit
 
 class CreditCardController: UIViewController, UITextFieldDelegate {
 
+    let maxNumCharacters = 19
     
     let textField: UITextField = {
        let tf = UITextField()
@@ -36,7 +37,7 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
     }
 
     @objc private func textFieldChanged (textField: UITextField) {
-        print("entering credit card number")
+        print("changing credit card number")
         guard let count = textField.text?.count else { return }
         if count == 4 || count == 9 || count == 14 {
             guard var text = textField.text else { return }
@@ -55,12 +56,10 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string == " " {
-            return false
-        }
-        print("Changing characters")
-        checkMaxLength(textField, maxLength: 19, string: string)
-        return true
+        
+        let newLength = textField.text!.count + string.count - range.length
+        checkMaxLength(textField, maxLength: newLength, string: string)
+        return newLength <= maxNumCharacters
     }
     
     public func checkMaxLength(_ textField: UITextField, maxLength: Int, string: String) {
@@ -73,10 +72,7 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
             }
             textField.deleteBackward()
         }
-    
-
     }
-
 }
 
 extension String {
