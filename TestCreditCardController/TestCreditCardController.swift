@@ -27,7 +27,7 @@ class TestCreditCardController: XCTestCase {
         creditCardVC = CreditCardController()
         
         let testedString = String(repeating: "", count: creditCardVC.maxNumCharacters)
-        let testedResult = creditCardVC.textField(creditCardVC.textField, shouldChangeCharactersIn: NSRange(location: 0, length: 0), replacementString: testedString)
+        let testedResult = creditCardVC.textField(creditCardVC.textField, shouldChangeCharactersIn: NSRange(location: 0, length: 1), replacementString: testedString)
         XCTAssertTrue(testedResult, "The max characters allowed is \(creditCardVC.maxNumCharacters) characters")
     }
 
