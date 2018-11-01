@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class CreditCardController: UIViewController, UITextFieldDelegate {
 
@@ -39,10 +40,11 @@ class CreditCardController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupTextField(){
-        textField.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 10).isActive = true
-        textField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        textField.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(150)
+        }
         
     }
 
